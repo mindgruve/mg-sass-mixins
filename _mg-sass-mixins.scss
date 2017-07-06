@@ -86,7 +86,7 @@
 
 
 // Icon Arrow Left
-@mixin icon-arrow-left($color, $border-width: 1px, $length) {
+@mixin icon-arrow-left($color, $length, $border-width: 1px) {
     @include transform(rotate(45deg));
     border-bottom: $border-width solid $color;
     border-left: $border-width solid $color;
@@ -98,7 +98,7 @@
 }
 
 // Icon Arrow Right
-@mixin icon-arrow-right($color, $border-width: 1px, $length) {
+@mixin icon-arrow-right($color, $length, $border-width: 1px) {
     @include transform(rotate(45deg));
     border-right: $border-width solid $color;
     border-top: $border-width solid $color;
@@ -110,7 +110,7 @@
 }
 
 // Icon Arrow Up
-@mixin icon-arrow-up($color, $border-width: 1px, $length) {
+@mixin icon-arrow-up($color, $length, $border-width: 1px) {
     @include transform(rotate(45deg));
     border-left: $border-width solid $color;
     border-top: $border-width solid $color;
@@ -122,7 +122,7 @@
 }
 
 // Icon Arrow Bottom
-@mixin icon-arrow-bottom($color, $border-width: 1px, $length) {
+@mixin icon-arrow-bottom($color, $length, $border-width: 1px) {
     @include transform(rotate(45deg));
     border-bottom: $border-width solid $color;
     border-right: $border-width solid $color;
