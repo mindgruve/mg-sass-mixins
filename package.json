@@ -2,9 +2,6 @@
   "name": "mg-sass-mixins",
   "version": "1.0.0",
   "description": "Common mixins and helpers used in projects using Sass",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mindgruve/mg-sass-mixins.git"
