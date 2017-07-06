@@ -1,0 +1,134 @@
+// breakpoint mixins
+@mixin bp($point) {
+    @media screen and (min-width: $point) { @content; }
+}
+
+@mixin bpmax($point) {
+    @media screen and (max-width: $point) { @content; }
+}
+
+@mixin bpminmax($point,$point2) {
+    @media screen and (min-width: $point) and (max-width: $point2) { @content; }
+}
+
+@mixin retina {
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+        @content;
+    }
+}
+
+
+// layout mixins
+@mixin backdrop {
+    .backdrop {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+    }
+}
+
+// text
+@mixin letter-spacing($value) {
+    letter-spacing: ((0.001 * $value) + em);
+}
+
+// input placeholders
+@mixin style-placeholder($color, $opacity: 1) {
+    &::-webkit-input-placeholder {
+        @include opacity($opacity);
+        color: $color;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        @include opacity($opacity);
+        color: $color;
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+        @include opacity($opacity);
+        color: $color;
+    }
+
+    &:-ms-input-placeholder {
+        @include opacity($opacity);
+        color: $color;
+    }
+}
+
+@mixin font-smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// List Unstyled
+@mixin list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+// Vertical Align
+@mixin vertical-align-wrap($height: 100%) {
+    height: $height;
+    display: table;
+    width: 100%;
+}
+
+@mixin vertical-align-cell {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+}
+
+
+// Icon Arrow Left
+@mixin icon-arrow-left($color, $border-width: 1px, $length) {
+    @include transform(rotate(45deg));
+    border-bottom: $border-width solid $color;
+    border-left: $border-width solid $color;
+    content: '';
+    display: inline-block;
+    height: $length;
+    vertical-align: middle;
+    width: $length;
+}
+
+// Icon Arrow Right
+@mixin icon-arrow-right($color, $border-width: 1px, $length) {
+    @include transform(rotate(45deg));
+    border-right: $border-width solid $color;
+    border-top: $border-width solid $color;
+    content: '';
+    display: inline-block;
+    height: $length;
+    vertical-align: middle;
+    width: $length;
+}
+
+// Icon Arrow Up
+@mixin icon-arrow-up($color, $border-width: 1px, $length) {
+    @include transform(rotate(45deg));
+    border-left: $border-width solid $color;
+    border-top: $border-width solid $color;
+    content: '';
+    display: inline-block;
+    height: $length;
+    vertical-align: middle;
+    width: $length;
+}
+
+// Icon Arrow Bottom
+@mixin icon-arrow-bottom($color, $border-width: 1px, $length) {
+    @include transform(rotate(45deg));
+    border-bottom: $border-width solid $color;
+    border-right: $border-width solid $color;
+    content: '';
+    display: inline-block;
+    height: $length;
+    vertical-align: middle;
+    width: $length;
+}
